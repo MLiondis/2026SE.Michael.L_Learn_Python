@@ -14,3 +14,5 @@ elif ".txt" in type:
     print("text/plain")
 elif ".zip" in type:
     print("application/zip")
+else:
+    print("application/octet-stream")
