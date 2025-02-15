@@ -7,31 +7,52 @@ def main():
 
 
 def is_valid(s):
-	
+	return all([
+        start_letters(s),
+        characters(s),
+        check_last_letter(s),
+        no_special_characters(s)
+        ])
 
 
-
-# “All vanity plates must start with at least two letters.” (if var was variable then var[0:2] would be va)
-# “… vanity plates may contain a maximum of 6 characters (letters or numbers) and a minimum of 2 characters.”
-# “Numbers cannot be used in the middle of a plate; they must come at the end. For example, AAA222 would be an 
-# acceptable vanity plate; AAA22A would not be acceptable. The first number used cannot be a ‘0’.”
-# “No periods, spaces, or punctuation marks are allowed.”
-
-def start_letters():
+# makes sure the first 2 digits are letters 
+def start_letters(string):
 	if string[0:2].isalpha():
 		return True
+
+# makes sure the maximum is six and minimum is 2
+def characters(string):
+	if 2 <= len(string) <= 6:
+		return True
+
+
+
+
+def check_last_letter(string):
+	#stores the location of the first digit found
+	location = None
+	# stores the digit that is encountered
+	num = ""
+	for letter in string:
+		#checks for digits in the string
+		if letter.isdigit():
+			# finds the position of the digit 
+			location = string.index(letter)
+			# adds the position to num
+			num += letter
+			break
 	
-def characters():
-	if len(string) >= 2 and len(string) <= 6:
+	if string[location:].isdigit():
+		if string[location].startswith("0") == False:
+			return True
+
+
+
+def no_special_characters(string):
+	if string.isalnum():
 		return True
 	else: 
 		return False
-
-
-
-
-
-
 
 
 
