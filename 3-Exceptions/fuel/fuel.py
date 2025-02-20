@@ -1,22 +1,25 @@
-#def main():
-    #fuel = input("Enter fuel: ")
-    #print("Fuel level is", (x / y),"%")
-    #if convert(fuel) < 0.01:
-        #print("E")
-    #elif convert(fuel) > 0.99:
-        #print("F")
+def main():
+    while True:
+        try:
+            x, y = input("Enter fuel: ").split("/")
+            x = int(x)
+            y = int(y)
+
+            if y == 0:
+                raise ZeroDivisionError("The denominator cannot be zero")
 
 
-x, y = input("Enter fuel: ").split("/")
-x = int(x)
-y = int(y)
-fuel = (x / y * 100, "%")
-print(fuel)
+            fuel_percentage = (x / y) * 100
 
-if fuel < 1.0:
-    print("E")
-elif fuel > 99.0:
-    print("F")
+            if fuel_percentage < 1.0:
+                print("E")
+            elif fuel_percentage > 99.0:
+                print("F")
+            else:
+                print(f"Fuel level is {fuel_percentage:.1f}%")
+                break
+            
+        except ValueError:
+            print("invalid input, please enter a valid fuel level")
 
-
-#main()
+main()
