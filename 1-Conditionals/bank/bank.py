@@ -9,4 +9,3 @@ else:
         print("$20")
     else:
         print("$100")
-

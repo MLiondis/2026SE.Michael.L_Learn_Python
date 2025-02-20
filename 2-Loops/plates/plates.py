@@ -57,6 +57,4 @@ def no_special_characters(string):
 
 
 
-
-
 main()
