@@ -1,8 +1,7 @@
 import random
 
-
-#def main():
-
+def main():
+    get_level()
 
 def get_level():
     while True:
@@ -95,12 +94,5 @@ def generate_integer(level):
             print("Your score is", score,"/10")
             break
 
-
-
-
-
-
-
-#if __name__ == "__main__":
-#main()
-get_level()
+if __name__ == "__main__":
+    main()
