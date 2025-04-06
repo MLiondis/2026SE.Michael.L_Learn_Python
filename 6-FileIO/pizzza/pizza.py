@@ -1,7 +1,6 @@
 from tabulate import tabulate 
 import sys
 import csv
-import cowsay
 
 new_table = []
 
@@ -20,7 +19,7 @@ else:
             reader = csv.DictReader(file)
             for row in reader:
                 new_table.append(row)
-            cowsay.trex(tabulate(new_table, headers="keys", tablefmt="grid"))
+            print(tabulate(new_table, headers="keys", tablefmt="grid"))
     except FileNotFoundError:
         print("File does not exist")
         sys.exit(1)
